@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Campo del Abuelo - Aprendemos Agricultura</title>
+  <meta name="description" content="Página web educativa e interactiva para niños de 4-5 años sobre agricultura, cereales y el trabajo en el campo. Descubre la historia del abuelo, juega con cereales y aprende con Jimena.">
+  <!-- Google Font: Fredoka para estética infantil y legibilidad desde lejos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra de Control Superior -->
+  <header id="global-header" class="hidden">
+    <button id="btn-home" class="header-btn" title="Volver al Menú Principal">
+      <svg viewBox="0 0 24 24" width="32" height="32">
+        <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+      <span>Inicio</span>
+    </button>
+    <div id="phase-title">Fase X: Título de la Fase</div>
+    <div id="step-indicator" class="step-indicator"></div>
+  </header>
+
+  <!-- Contenedor Principal de Pantallas -->
+  <main id="app-container">
+
+    <!-- PANTALLA DE INICIO (Menú Principal) -->
+    <section id="screen-menu" class="screen active">
+      <div class="menu-hero">
+        <div class="hero-image-container">
+          <img id="img-menu-hero" src="assets/images/portada.jpeg" alt="El Campo del Abuelo" class="hero-image">
+        </div>
+        <h1 class="main-title">El Campo del Abuelo</h1>
+        <p class="subtitle">¡Acompaña a Jimena y al abuelo a descubrir la agricultura!</p>
+      </div>
+
+      <div class="menu-grid">
+        <button id="btn-menu-p0" class="menu-card card-p0">
+          <div class="card-icon">👴</div>
+          <h3>Conoce nuestros orígenes</h3>
+          <p>Fase 0</p>
+        </button>
+        <button id="btn-menu-p1" class="menu-card card-p1">
+          <div class="card-icon">🥖</div>
+          <h3>¿Con qué se hace esto?</h3>
+          <p>Fase 1</p>
+        </button>
+        <button id="btn-menu-p2" class="menu-card card-p2">
+          <div class="card-icon">🌾</div>
+          <h3>El camino del grano</h3>
+          <p>Fase 2</p>
+        </button>
+        <button id="btn-menu-p3" class="menu-card card-p3">
+          <div class="card-icon">🚜</div>
+          <h3>¿Qué máquina es?</h3>
+          <p>Fase 3</p>
+        </button>
+        <button id="btn-menu-p4" class="menu-card card-p4">
+          <div class="card-icon">📖</div>
+          <h3>El cuento del campo</h3>
+          <p>Fase 4</p>
+        </button>
+      </div>
+    </section>
+
+    <!-- FASE 0: La historia del abuelo -->
+    <section id="screen-phase0" class="screen">
+      <div class="split-layout">
+        <div class="gallery-container">
+          <div id="gallery-slides" class="gallery-slides">
+            <!-- Las imágenes se cargan dinámicamente en JS -->
+          </div>
+          <div class="gallery-controls">
+            <button id="btn-gallery-prev" class="gallery-arrow">◀</button>
+            <button id="btn-gallery-next" class="gallery-arrow">▶</button>
+          </div>
+        </div>
+        <div class="story-speech-bubble">
+          <p id="p0-story-text" class="speech-text">Cargando historia...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 1: ¿Con qué se hace esto? -->
+    <section id="screen-phase1" class="screen">
+      <div class="game-container-p1">
+        <div class="game-instruction">
+          <h2>¿De qué cereal se hace este alimento?</h2>
+          <p class="small-instruction">Pulsa sobre el cereal correcto</p>
+        </div>
+
+        <!-- Tarjeta de alimento / producto -->
+        <div id="product-card-container" class="product-card-container">
+          <div id="product-card" class="product-card">
+            <span id="product-icon" class="product-emoji">🍞</span>
+            <span id="product-name" class="product-title">Pan de Trigo</span>
+          </div>
+        </div>
+
+        <!-- Personajes de cereales -->
+        <div class="grain-buckets-container">
+          <button id="bucket-trigo" class="grain-bucket" data-grain="trigo">
+            <div class="character-visual-container">
+              <!-- SVG de Trigo -->
+              <svg viewBox="0 0 120 150" class="cereal-char-svg">
+                <path d="M 60 20 C 85 45, 95 90, 85 120 C 75 140, 45 140, 35 120 C 25 90, 35 45, 60 20 Z" fill="#F9D342" stroke="#4E3629" stroke-width="4"/>
+                <path d="M 60 20 Q 60 5 65 0 M 60 20 Q 55 10 50 5 M 60 20 Q 65 10 70 5" stroke="#4E3629" stroke-width="3" fill="none"/>
+                <circle cx="48" cy="75" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+                <circle cx="48" cy="75" r="3" fill="#000"/>
+                <circle cx="72" cy="75" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+                <circle cx="72" cy="75" r="3" fill="#000"/>
+                <circle cx="46" cy="73" r="2" fill="#FFF"/>
+                <circle cx="70" cy="73" r="2" fill="#FFF"/>
+                <circle cx="40" cy="85" r="5" fill="#FF8E8E" opacity="0.8"/>
+                <circle cx="80" cy="85" r="5" fill="#FF8E8E" opacity="0.8"/>
+                <path d="M 50 88 Q 60 102 70 88" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 32 90 Q 15 85 20 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 88 90 Q 105 85 100 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 45 133 Q 45 145 40 145" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 75 133 Q 75 145 80 145" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="bucket-label label-trigo">TRIGO</span>
+          </button>
+
+          <button id="bucket-centeno" class="grain-bucket" data-grain="centeno">
+            <div class="character-visual-container">
+              <!-- SVG de Centeno -->
+              <svg viewBox="0 0 120 150" class="cereal-char-svg">
+                <path d="M 60 15 C 80 40, 85 95, 80 125 C 75 142, 45 142, 40 125 C 35 95, 40 40, 60 15 Z" fill="#C19A6B" stroke="#4E3629" stroke-width="4"/>
+                <path d="M 60 15 Q 40 -5 50 -10 Q 60 -12 65 -2 Z" fill="#76C043" stroke="#4E3629" stroke-width="3"/>
+                <circle cx="48" cy="70" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+                <circle cx="48" cy="70" r="3" fill="#000"/>
+                <circle cx="72" cy="70" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+                <circle cx="72" cy="70" r="3" fill="#000"/>
+                <circle cx="46" cy="68" r="2" fill="#FFF"/>
+                <circle cx="70" cy="68" r="2" fill="#FFF"/>
+                <circle cx="40" cy="80" r="5" fill="#FF8E8E" opacity="0.8"/>
+                <circle cx="80" cy="80" r="5" fill="#FF8E8E" opacity="0.8"/>
+                <path d="M 52 82 Q 60 92 68 82 Z" fill="#E74C3C" stroke="#4E3629" stroke-width="3"/>
+                <path d="M 36 90 Q 20 85 22 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 84 90 Q 100 85 98 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 46 135 Q 46 146 41 146" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 74 135 Q 74 146 79 146" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="bucket-label label-centeno">CENTENO</span>
+          </button>
+
+          <button id="bucket-avena" class="grain-bucket" data-grain="avena">
+            <div class="character-visual-container">
+              <!-- SVG de Avena -->
+              <svg viewBox="0 0 120 150" class="cereal-char-svg">
+                <path d="M 60 25 C 85 45, 90 90, 80 120 C 72 138, 48 138, 40 120 C 30 90, 35 45, 60 25 Z" fill="#F5F0E6" stroke="#4E3629" stroke-width="4"/>
+                <path d="M 40 30 Q 30 20 40 15 Q 50 20 40 30 Z M 50 30 Q 60 20 50 15 Q 40 20 50 30 Z" fill="#F47A22" stroke="#4E3629" stroke-width="2"/>
+                <circle cx="45" cy="22" r="4" fill="#E74C3C"/>
+                <circle cx="48" cy="72" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+                <circle cx="48" cy="72" r="3" fill="#000"/>
+                <path d="M 40 66 L 44 68 M 38 72 L 42 73" stroke="#4E3629" stroke-width="2.5"/>
+                <circle cx="72" cy="72" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+                <circle cx="72" cy="72" r="3" fill="#000"/>
+                <path d="M 80 66 L 76 68 M 82 72 L 78 73" stroke="#4E3629" stroke-width="2.5"/>
+                <circle cx="46" cy="70" r="2" fill="#FFF"/>
+                <circle cx="70" cy="70" r="2" fill="#FFF"/>
+                <circle cx="40" cy="82" r="5" fill="#FF8E8E" opacity="0.8"/>
+                <circle cx="80" cy="82" r="5" fill="#FF8E8E" opacity="0.8"/>
+                <path d="M 52 84 Q 60 94 68 84" stroke="#4E3629" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M 34 88 Q 18 95 24 105" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 86 88 Q 102 95 96 105" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 46 132 Q 46 144 41 144" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 74 132 Q 74 144 79 144" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="bucket-label label-avena">AVENA</span>
+          </button>
+        </div>
+
+        <!-- Cuadro de diálogo del Abuelo (retroalimentación) -->
+        <div id="p1-feedback-bubble" class="feedback-bubble hidden">
+          <div class="abuelo-avatar">👴</div>
+          <p id="p1-feedback-text" class="feedback-text">¡Muy bien hecho!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 2: El camino del grano -->
+    <section id="screen-phase2" class="screen">
+      <div class="step-card">
+        <div class="step-graphics-container">
+          <div id="step-svg-canvas" class="step-svg-canvas">
+            <!-- Los SVGs interactivos animados de cada uno de los 9 pasos se inyectan aquí -->
+          </div>
+        </div>
+        <div class="step-text-container">
+          <div class="step-badge"><span id="step-number-text">Paso 1 de 10</span></div>
+          <h2 id="step-title" class="step-title">Preparar la tierra</h2>
+          <p id="step-description" class="step-desc">El tractor ara el campo para dejar la tierra blandita y lista.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 3: ¿Qué máquina es? -->
+    <section id="screen-phase3" class="screen">
+      <div class="game-container-p3">
+        <div class="sound-game-header">
+          <h2>Escucha con atención... ¿Qué máquina hace este ruido?</h2>
+        </div>
+
+        <div class="sound-button-container">
+          <button id="btn-play-sound" class="btn-play-sound pulse-animation">
+            <div class="play-icon">🔊</div>
+            <div class="play-label">¡PULSAR PARA ESCUCHAR!</div>
+          </button>
+        </div>
+
+        <!-- Tres opciones con ilustraciones -->
+        <div id="machine-options" class="machine-options-grid">
+          <button id="machine-opt-1" class="machine-card-btn" data-index="0">
+            <div id="machine-opt-1-icon" class="machine-icon">🚜</div>
+            <div id="machine-opt-1-name" class="machine-name">Tractor</div>
+          </button>
+          <button id="machine-opt-2" class="machine-card-btn" data-index="1">
+            <div id="machine-opt-2-icon" class="machine-icon">🌾</div>
+            <div id="machine-opt-2-name" class="machine-name">Cosechadora</div>
+          </button>
+          <button id="machine-opt-3" class="machine-card-btn" data-index="2">
+            <div id="machine-opt-3-icon" class="machine-icon">🌱</div>
+            <div id="machine-opt-3-name" class="machine-name">Sembradora</div>
+          </button>
+        </div>
+
+        <!-- Contenedor de acierto / máquina animada gigante -->
+        <div id="machine-celebration" class="machine-celebration hidden">
+          <div class="confetti-effect"></div>
+          <div id="celebration-animation-area" class="celebration-animation-area">
+            <!-- SVG animado de la máquina acertada -->
+          </div>
+          <h2 id="celebration-machine-title" class="celebration-machine-title">¡SÍ! ¡ES EL TRACTOR!</h2>
+          <button id="btn-next-machine" class="next-level-btn">¡Siguiente Máquina! ➔</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 4: ¡Todos al campo! -->
+    <section id="screen-phase4" class="screen">
+      <div class="game-container-p4">
+        
+        <!-- El Lienzo del Campo Interactivo -->
+        <div id="farm-canvas" class="farm-canvas">
+          <!-- Cielo, Colinas y Tierra base -->
+          <div class="farm-sky">
+            <!-- Nubes decorativas -->
+            <div class="cloud-decor c1">☁️</div>
+            <div class="cloud-decor c2">☁️</div>
+          </div>
+          <div class="farm-hills"></div>
+          <div class="farm-ground"></div>
+          
+          <!-- Elementos desbloqueables (ocultos inicialmente) -->
+          <!-- 1. Trigo -->
+          <div id="farm-wheat" class="farm-element wheat-group">
+            <span class="element-emoji">🌾</span>
+            <span class="element-emoji">🌾</span>
+            <span class="element-emoji">🌾</span>
+          </div>
+          <!-- 2. Arado / Tractor arando -->
+          <div id="farm-plow" class="farm-element plow-tractor">
+            <svg viewBox="0 0 100 70" class="mini-tractor">
+              <rect x="20" y="25" width="50" height="30" fill="#E74C3C" rx="5" stroke="#4E3629" stroke-width="2"/>
+              <rect x="45" y="10" width="20" height="20" fill="#E74C3C" rx="3" stroke="#4E3629" stroke-width="2"/>
+              <rect x="48" y="12" width="14" height="12" fill="#FFF"/>
+              <circle cx="30" cy="55" r="10" fill="#333" stroke="#FFF" stroke-width="2"/>
+              <circle cx="60" cy="50" r="15" fill="#333" stroke="#FFF" stroke-width="2"/>
+              <line x1="26" y1="25" x2="26" y2="5" stroke="#4E3629" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <!-- 3. Sol -->
+          <div id="farm-sun" class="farm-element happy-sun">☀️</div>
+          <!-- 4. Avena y Flores -->
+          <div id="farm-avena" class="farm-element avena-flowers">
+            <span class="element-emoji">🌸</span>
+            <span class="element-emoji">🌱</span>
+            <span class="element-emoji">🌼</span>
+          </div>
+          <!-- 5. Cosechadora -->
+          <div id="farm-harvester" class="farm-element farm-combine">
+            <svg viewBox="0 0 120 80" class="mini-harvester">
+              <rect x="30" y="25" width="70" height="40" fill="#E74C3C" rx="5" stroke="#4E3629" stroke-width="2"/>
+              <rect x="70" y="10" width="25" height="20" fill="#A3D8F4" stroke="#4E3629" stroke-width="2"/>
+              <circle cx="50" cy="65" r="14" fill="#333" stroke="#FFF" stroke-width="2"/>
+              <circle cx="90" cy="65" r="10" fill="#333" stroke="#FFF" stroke-width="2"/>
+              <circle cx="20" cy="60" r="12" fill="none" stroke="#777" stroke-width="2"/>
+              <path d="M 80 25 L 60 5 L 50 8" stroke="#DDD" stroke-width="4" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <!-- 6. Alpacas de paja -->
+          <div id="farm-bales" class="farm-element straw-bales">
+            <span class="element-emoji">🟡</span>
+            <span class="element-emoji">🟡</span>
+          </div>
+          <!-- 7. Molino -->
+          <div id="farm-windmill" class="farm-element hill-windmill">
+            <svg viewBox="0 0 100 120" class="mini-windmill">
+              <path d="M 40 100 L 45 40 L 55 40 L 60 100 Z" fill="#D2C4B1" stroke="#4E3629" stroke-width="2.5"/>
+              <path d="M 45 40 Q 50 25 55 40 Z" fill="#8D5B4C"/>
+              <g class="spin-wheel" style="transform-origin: 50px 40px; animation-duration: 8s;">
+                <line x1="50" y1="40" x2="50" y2="10" stroke="#8D5B4C" stroke-width="2"/>
+                <line x1="50" y1="40" x2="50" y2="70" stroke="#8D5B4C" stroke-width="2"/>
+                <line x1="50" y1="40" x2="20" y2="40" stroke="#8D5B4C" stroke-width="2"/>
+                <line x1="50" y1="40" x2="80" y2="40" stroke="#8D5B4C" stroke-width="2"/>
+              </g>
+              <circle cx="50" cy="40" r="3" fill="#6E4437"/>
+            </svg>
+          </div>
+          <!-- 8. Personajes -->
+          <div id="farm-characters" class="farm-element farm-people">👴👧</div>
+        </div>
+
+        <!-- Panel de Preguntas y Opciones -->
+        <div class="quiz-panel">
+          <div class="quiz-speech-bubble">
+            <span id="quiz-question-number" class="quiz-badge">Pregunta 1 de 8</span>
+            <p id="quiz-question-text" class="quiz-text">Cargando pregunta...</p>
+          </div>
+
+          <!-- 3 opciones ilustradas -->
+          <div id="quiz-options-container" class="quiz-options-container">
+            <button id="quiz-opt-a" class="quiz-choice-btn" data-choice="0">
+              <span id="quiz-opt-a-emoji" class="quiz-choice-emoji">🍞</span>
+              <span id="quiz-opt-a-text" class="quiz-choice-text">Opción A</span>
+            </button>
+            <button id="quiz-opt-b" class="quiz-choice-btn" data-choice="1">
+              <span id="quiz-opt-b-emoji" class="quiz-choice-emoji">🥣</span>
+              <span id="quiz-opt-b-text" class="quiz-choice-text">Opción B</span>
+            </button>
+            <button id="quiz-opt-c" class="quiz-choice-btn" data-choice="2">
+              <span id="quiz-opt-c-emoji" class="quiz-choice-emoji">🥖</span>
+              <span id="quiz-opt-c-text" class="quiz-choice-text">Opción C</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pantalla de Celebración Final del Cuento / Campo -->
+        <div id="quiz-celebration" class="quiz-celebration-screen hidden">
+          <div class="celebration-content">
+            <div class="party-popper">🎉🚜🌾🥳</div>
+            <h2>¡Habéis construido el campo juntos!</h2>
+            <p class="celebration-desc">El campo del abuelo y del tío está lleno de vida gracias a vosotros.</p>
+            <p class="final-badge">🏆 ¡Gran Granjero de Fontecha! 🏆</p>
+            <button id="btn-quiz-reset" class="next-level-btn">Volver al Inicio</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Botones de Navegación Lateral (para Pizarras Digitales) -->
+  <div id="global-nav-arrows" class="global-nav-arrows hidden">
+    <button id="btn-prev" class="nav-arrow-btn arrow-left" title="Retroceder (Flecha Izquierda)">
+      <svg viewBox="0 0 24 24" width="40" height="40"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    </button>
+    <button id="btn-next" class="nav-arrow-btn arrow-right" title="Avanzar (Flecha Derecha / Espacio)">
+      <svg viewBox="0 0 24 24" width="40" height="40"><path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+    </button>
+  </div>
+
+  <!-- Sonido de Confeti y Éxito Synthesizer triggers, confetti canvas if any -->
+  <div id="toast-message" class="toast hidden">Mensaje de prueba</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
