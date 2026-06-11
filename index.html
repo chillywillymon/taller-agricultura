@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>El Campo del Abuelo - Aprendemos Agricultura</title>
-  <meta name="description" content="Página web educativa e interactiva para niños de 4-5 años sobre agricultura, cereales y el trabajo en el campo. Descubre la historia del abuelo, juega con cereales y aprende con Jimena.">
+  <title>El campo del abuelo y tío - Aprendemos Agricultura</title>
+  <meta name="description" content="Página web educativa e interactiva para niños de 4-5 años sobre agricultura, cereales y el trabajo en el campo. Descubre la historia del abuelo y tío, conoce los cereales y diviértete aprendiendo.">
   <!-- Google Font: Fredoka para estética infantil y legibilidad desde lejos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,10 +32,10 @@
     <section id="screen-menu" class="screen active">
       <div class="menu-hero">
         <div class="hero-image-container">
-          <img id="img-menu-hero" src="assets/images/portada.jpeg" alt="El Campo del Abuelo" class="hero-image">
+          <img id="img-menu-hero" src="assets/images/portada.jpeg" alt="El campo del abuelo y tío" class="hero-image">
         </div>
-        <h1 class="main-title">El Campo del Abuelo</h1>
-        <p class="subtitle">¡Acompaña a Jimena y al abuelo a descubrir la agricultura!</p>
+        <h1 class="main-title">El campo del abuelo y tío</h1>
+        <p class="subtitle">¡Acompaña a Jimena y a su familia a descubrir la agricultura!</p>
       </div>
 
       <div class="menu-grid">
@@ -45,8 +45,8 @@
           <p>Fase 0</p>
         </button>
         <button id="btn-menu-p1" class="menu-card card-p1">
-          <div class="card-icon">🥖</div>
-          <h3>¿Con qué se hace esto?</h3>
+          <div class="card-icon">🌱</div>
+          <h3>Presentando a nuestros amigos</h3>
           <p>Fase 1</p>
         </button>
         <button id="btn-menu-p2" class="menu-card card-p2">
@@ -60,9 +60,14 @@
           <p>Fase 3</p>
         </button>
         <button id="btn-menu-p4" class="menu-card card-p4">
-          <div class="card-icon">📖</div>
-          <h3>El cuento del campo</h3>
+          <div class="card-icon">🥖</div>
+          <h3>¿Con qué se hace esto?</h3>
           <p>Fase 4</p>
+        </button>
+        <button id="btn-menu-activity" class="menu-card card-activity">
+          <div class="card-icon">🎨</div>
+          <h3>¡Taller de arte!</h3>
+          <p>Actividad final</p>
         </button>
       </div>
     </section>
@@ -85,8 +90,125 @@
       </div>
     </section>
 
-    <!-- FASE 1: ¿Con qué se hace esto? -->
+    <!-- FASE 1: Presentando a nuestros amigos -->
     <section id="screen-phase1" class="screen">
+      <div class="phase1-container">
+        <div class="game-instruction">
+          <h2>Presentando a nuestros amigos cereales</h2>
+          <p class="small-instruction">¡Pulsa sobre un cereal para conocerlo!</p>
+        </div>
+
+        <!-- Botones de pestañas de cereales -->
+        <div class="cereal-tabs">
+          <button class="cereal-tab-btn active" data-cereal="trigo">
+            <span class="tab-emoji">🌾</span> Trigo
+          </button>
+          <button class="cereal-tab-btn" data-cereal="centeno">
+            <span class="tab-emoji">🌾</span> Centeno
+          </button>
+          <button class="cereal-tab-btn" data-cereal="avena">
+            <span class="tab-emoji">🥣</span> Avena
+          </button>
+          <button class="cereal-tab-btn" data-cereal="cebada">
+            <span class="tab-emoji">🌾</span> Cebada
+          </button>
+        </div>
+
+        <!-- Tarjeta de información del cereal seleccionado -->
+        <div class="cereal-details-card">
+          <div class="cereal-details-header">
+            <div id="cereal-detail-avatar" class="cereal-detail-avatar">
+              <!-- El SVG del trigo (primer cereal) -->
+              <svg viewBox="0 0 120 150" class="cereal-char-svg">
+                <path d="M 60 20 C 85 45, 95 90, 85 120 C 75 140, 45 140, 35 120 C 25 90, 35 45, 60 20 Z" fill="#F9D342" stroke="#4E3629" stroke-width="4"/>
+                <path d="M 60 20 Q 60 5 65 0 M 60 20 Q 55 10 50 5 M 60 20 Q 65 10 70 5" stroke="#4E3629" stroke-width="3" fill="none"/>
+                <circle cx="48" cy="75" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+                <circle cx="48" cy="75" r="3" fill="#000"/>
+                <circle cx="72" cy="75" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+                <circle cx="72" cy="75" r="3" fill="#000"/>
+                <circle cx="46" cy="73" r="2" fill="#FFF"/>
+                <circle cx="70" cy="73" r="2" fill="#FFF"/>
+                <circle cx="40" cy="85" r="5" fill="#FF8E8E" opacity="0.8"/>
+                <circle cx="80" cy="85" r="5" fill="#FF8E8E" opacity="0.8"/>
+                <path d="M 50 88 Q 60 102 70 88" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 32 90 Q 15 85 20 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 88 90 Q 105 85 100 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 45 133 Q 45 145 40 145" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 75 133 Q 75 145 80 145" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="cereal-detail-bubble">
+              <p id="cereal-detail-desc" class="cereal-detail-text">
+                ¡Hola, soy el Trigo! Soy el cereal más famoso. Mis espigas son doradas y con mis granos hacemos harina blanca para preparar pan de molde, galletas, bizcochos y espaguetis.
+              </p>
+            </div>
+          </div>
+
+          <!-- Comparación Planta vs Grano eliminada a petición del usuario -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 2: El camino del grano -->
+    <section id="screen-phase2" class="screen">
+      <div class="step-card">
+        <div class="step-graphics-container">
+          <div id="step-svg-canvas" class="step-svg-canvas">
+            <!-- Los SVGs interactivos animados de cada uno de los 9 pasos se inyectan aquí -->
+          </div>
+        </div>
+        <div class="step-text-container">
+          <div class="step-badge"><span id="step-number-text">Paso 1 de 10</span></div>
+          <h2 id="step-title" class="step-title">Preparar la tierra</h2>
+          <p id="step-description" class="step-desc">El tractor ara el campo para dejar la tierra blandita y lista.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 3: ¿Qué máquina es? -->
+    <section id="screen-phase3" class="screen">
+      <div class="game-container-p3">
+        <div class="sound-game-header">
+          <h2>Escucha con atención... ¿Qué máquina hace este ruido?</h2>
+        </div>
+
+        <div class="sound-button-container">
+          <button id="btn-play-sound" class="btn-play-sound pulse-animation">
+            <div class="play-icon">🔊</div>
+            <div class="play-label">¡PULSAR PARA ESCUCHAR!</div>
+          </button>
+        </div>
+
+        <!-- Tres opciones con ilustraciones -->
+        <div id="machine-options" class="machine-options-grid">
+          <button id="machine-opt-1" class="machine-card-btn" data-index="0">
+            <div id="machine-opt-1-icon" class="machine-icon">🚜</div>
+            <div id="machine-opt-1-name" class="machine-name">Tractor</div>
+          </button>
+          <button id="machine-opt-2" class="machine-card-btn" data-index="1">
+            <div id="machine-opt-2-icon" class="machine-icon">🌾</div>
+            <div id="machine-opt-2-name" class="machine-name">Cosechadora</div>
+          </button>
+          <button id="machine-opt-3" class="machine-card-btn" data-index="2">
+            <div id="machine-opt-3-icon" class="machine-icon">🚛</div>
+            <div id="machine-opt-3-name" class="machine-name">Camión</div>
+          </button>
+        </div>
+
+        <!-- Contenedor de acierto / máquina animada gigante -->
+        <div id="machine-celebration" class="machine-celebration hidden">
+          <div class="confetti-effect"></div>
+          <div id="celebration-animation-area" class="celebration-animation-area">
+            <!-- SVG animado de la máquina acertada -->
+          </div>
+          <h2 id="celebration-machine-title" class="celebration-machine-title">¡SÍ! ¡ES EL TRACTOR!</h2>
+          <button id="btn-next-machine" class="next-level-btn">¡Siguiente Máquina! ➔</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 4: ¿Con qué se hace esto? -->
+    <section id="screen-phase4" class="screen">
       <div class="game-container-p1">
         <div class="game-instruction">
           <h2>¿De qué cereal se hace este alimento?</h2>
@@ -96,7 +218,9 @@
         <!-- Tarjeta de alimento / producto -->
         <div id="product-card-container" class="product-card-container">
           <div id="product-card" class="product-card">
-            <span id="product-icon" class="product-emoji">🍞</span>
+            <div class="product-image-container">
+              <img id="product-img" src="" alt="" class="product-img">
+            </div>
             <span id="product-name" class="product-title">Pan de Trigo</span>
           </div>
         </div>
@@ -177,186 +301,85 @@
             </div>
             <span class="bucket-label label-avena">AVENA</span>
           </button>
+
+          <button id="bucket-cebada" class="grain-bucket" data-grain="cebada">
+            <div class="character-visual-container">
+              <!-- SVG de Cebada -->
+              <svg viewBox="0 0 120 150" class="cereal-char-svg">
+                <path d="M 60 20 C 85 45, 95 90, 85 120 C 75 140, 45 140, 35 120 C 25 90, 35 45, 60 20 Z" fill="#E5C158" stroke="#4E3629" stroke-width="4"/>
+                <path d="M 60 20 L 60 -15 M 55 22 L 40 -10 M 65 22 L 80 -10 M 50 30 L 25 5 M 70 30 L 95 5" stroke="#4E3629" stroke-width="3" fill="none"/>
+                <circle cx="48" cy="75" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+                <circle cx="48" cy="75" r="3" fill="#000"/>
+                <circle cx="72" cy="75" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+                <circle cx="72" cy="75" r="3" fill="#000"/>
+                <circle cx="46" cy="73" r="2" fill="#FFF"/>
+                <circle cx="70" cy="73" r="2" fill="#FFF"/>
+                <circle cx="40" cy="85" r="5" fill="#FF8E8E" opacity="0.8"/>
+                <circle cx="80" cy="85" r="5" fill="#FF8E8E" opacity="0.8"/>
+                <path d="M 50 88 Q 60 102 70 88" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 32 90 Q 15 85 20 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 88 90 Q 105 85 100 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 45 133 Q 45 145 40 145" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M 75 133 Q 75 145 80 145" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="bucket-label label-cebada">CEBADA</span>
+          </button>
         </div>
 
         <!-- Cuadro de diálogo del Abuelo (retroalimentación) -->
-        <div id="p1-feedback-bubble" class="feedback-bubble hidden">
+        <div id="p4-feedback-bubble" class="feedback-bubble hidden">
           <div class="abuelo-avatar">👴</div>
-          <p id="p1-feedback-text" class="feedback-text">¡Muy bien hecho!</p>
+          <p id="p4-feedback-text" class="feedback-text">¡Muy bien hecho!</p>
         </div>
       </div>
-    </section>
 
-    <!-- FASE 2: El camino del grano -->
-    <section id="screen-phase2" class="screen">
-      <div class="step-card">
-        <div class="step-graphics-container">
-          <div id="step-svg-canvas" class="step-svg-canvas">
-            <!-- Los SVGs interactivos animados de cada uno de los 9 pasos se inyectan aquí -->
+      <!-- Pantalla de Celebración Final -->
+      <div id="quiz-celebration" class="quiz-celebration-screen hidden">
+        <div class="celebration-content">
+          <div class="party-popper">🎉🌾🍺🥖</div>
+          <h2>¡Habéis completado la clasificación!</h2>
+          <p class="celebration-desc">El abuelo y el tío están encantados. ¡Habéis aprendido muchísimo sobre los cereales!</p>
+          <p class="final-badge">🏆 ¡Gran Granjero de Fontecha! 🏆</p>
+          <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem;">
+            <button id="btn-quiz-activity" class="next-level-btn" style="background-color: #E74C3C; box-shadow: 0 6px 0 #C0392B;">¡Hacer Obra de Arte! 🎨</button>
+            <button id="btn-quiz-reset" class="next-level-btn" style="background-color: var(--color-sky-dark); box-shadow: 0 6px 0 #2980B9;">Volver al Inicio 🏠</button>
           </div>
         </div>
-        <div class="step-text-container">
-          <div class="step-badge"><span id="step-number-text">Paso 1 de 10</span></div>
-          <h2 id="step-title" class="step-title">Preparar la tierra</h2>
-          <p id="step-description" class="step-desc">El tractor ara el campo para dejar la tierra blandita y lista.</p>
-        </div>
       </div>
     </section>
 
-    <!-- FASE 3: ¿Qué máquina es? -->
-    <section id="screen-phase3" class="screen">
-      <div class="game-container-p3">
-        <div class="sound-game-header">
-          <h2>Escucha con atención... ¿Qué máquina hace este ruido?</h2>
+    <!-- ACTIVIDAD ESPECIAL (Obra de Arte) -->
+    <section id="screen-activity" class="screen">
+      <div class="activity-card">
+        <div class="activity-header">
+          <span class="activity-emoji">🎨</span>
+          <h2>¡Taller de Arte del Campo!</h2>
         </div>
-
-        <div class="sound-button-container">
-          <button id="btn-play-sound" class="btn-play-sound pulse-animation">
-            <div class="play-icon">🔊</div>
-            <div class="play-label">¡PULSAR PARA ESCUCHAR!</div>
-          </button>
-        </div>
-
-        <!-- Tres opciones con ilustraciones -->
-        <div id="machine-options" class="machine-options-grid">
-          <button id="machine-opt-1" class="machine-card-btn" data-index="0">
-            <div id="machine-opt-1-icon" class="machine-icon">🚜</div>
-            <div id="machine-opt-1-name" class="machine-name">Tractor</div>
-          </button>
-          <button id="machine-opt-2" class="machine-card-btn" data-index="1">
-            <div id="machine-opt-2-icon" class="machine-icon">🌾</div>
-            <div id="machine-opt-2-name" class="machine-name">Cosechadora</div>
-          </button>
-          <button id="machine-opt-3" class="machine-card-btn" data-index="2">
-            <div id="machine-opt-3-icon" class="machine-icon">🌱</div>
-            <div id="machine-opt-3-name" class="machine-name">Sembradora</div>
-          </button>
-        </div>
-
-        <!-- Contenedor de acierto / máquina animada gigante -->
-        <div id="machine-celebration" class="machine-celebration hidden">
-          <div class="confetti-effect"></div>
-          <div id="celebration-animation-area" class="celebration-animation-area">
-            <!-- SVG animado de la máquina acertada -->
-          </div>
-          <h2 id="celebration-machine-title" class="celebration-machine-title">¡SÍ! ¡ES EL TRACTOR!</h2>
-          <button id="btn-next-machine" class="next-level-btn">¡Siguiente Máquina! ➔</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- FASE 4: ¡Todos al campo! -->
-    <section id="screen-phase4" class="screen">
-      <div class="game-container-p4">
+        <p class="activity-intro">¡Vamos a rellenar nuestra plantilla pegando macarrones y semillas reales!</p>
         
-        <!-- El Lienzo del Campo Interactivo -->
-        <div id="farm-canvas" class="farm-canvas">
-          <!-- Cielo, Colinas y Tierra base -->
-          <div class="farm-sky">
-            <!-- Nubes decorativas -->
-            <div class="cloud-decor c1">☁️</div>
-            <div class="cloud-decor c2">☁️</div>
-          </div>
-          <div class="farm-hills"></div>
-          <div class="farm-ground"></div>
-          
-          <!-- Elementos desbloqueables (ocultos inicialmente) -->
-          <!-- 1. Trigo -->
-          <div id="farm-wheat" class="farm-element wheat-group">
-            <span class="element-emoji">🌾</span>
-            <span class="element-emoji">🌾</span>
-            <span class="element-emoji">🌾</span>
-          </div>
-          <!-- 2. Arado / Tractor arando -->
-          <div id="farm-plow" class="farm-element plow-tractor">
-            <svg viewBox="0 0 100 70" class="mini-tractor">
-              <rect x="20" y="25" width="50" height="30" fill="#E74C3C" rx="5" stroke="#4E3629" stroke-width="2"/>
-              <rect x="45" y="10" width="20" height="20" fill="#E74C3C" rx="3" stroke="#4E3629" stroke-width="2"/>
-              <rect x="48" y="12" width="14" height="12" fill="#FFF"/>
-              <circle cx="30" cy="55" r="10" fill="#333" stroke="#FFF" stroke-width="2"/>
-              <circle cx="60" cy="50" r="15" fill="#333" stroke="#FFF" stroke-width="2"/>
-              <line x1="26" y1="25" x2="26" y2="5" stroke="#4E3629" stroke-width="2.5"/>
-            </svg>
-          </div>
-          <!-- 3. Sol -->
-          <div id="farm-sun" class="farm-element happy-sun">☀️</div>
-          <!-- 4. Avena y Flores -->
-          <div id="farm-avena" class="farm-element avena-flowers">
-            <span class="element-emoji">🌸</span>
-            <span class="element-emoji">🌱</span>
-            <span class="element-emoji">🌼</span>
-          </div>
-          <!-- 5. Cosechadora -->
-          <div id="farm-harvester" class="farm-element farm-combine">
-            <svg viewBox="0 0 120 80" class="mini-harvester">
-              <rect x="30" y="25" width="70" height="40" fill="#E74C3C" rx="5" stroke="#4E3629" stroke-width="2"/>
-              <rect x="70" y="10" width="25" height="20" fill="#A3D8F4" stroke="#4E3629" stroke-width="2"/>
-              <circle cx="50" cy="65" r="14" fill="#333" stroke="#FFF" stroke-width="2"/>
-              <circle cx="90" cy="65" r="10" fill="#333" stroke="#FFF" stroke-width="2"/>
-              <circle cx="20" cy="60" r="12" fill="none" stroke="#777" stroke-width="2"/>
-              <path d="M 80 25 L 60 5 L 50 8" stroke="#DDD" stroke-width="4" stroke-linecap="round" fill="none"/>
-            </svg>
-          </div>
-          <!-- 6. Alpacas de paja -->
-          <div id="farm-bales" class="farm-element straw-bales">
-            <span class="element-emoji">🟡</span>
-            <span class="element-emoji">🟡</span>
-          </div>
-          <!-- 7. Molino -->
-          <div id="farm-windmill" class="farm-element hill-windmill">
-            <svg viewBox="0 0 100 120" class="mini-windmill">
-              <path d="M 40 100 L 45 40 L 55 40 L 60 100 Z" fill="#D2C4B1" stroke="#4E3629" stroke-width="2.5"/>
-              <path d="M 45 40 Q 50 25 55 40 Z" fill="#8D5B4C"/>
-              <g class="spin-wheel" style="transform-origin: 50px 40px; animation-duration: 8s;">
-                <line x1="50" y1="40" x2="50" y2="10" stroke="#8D5B4C" stroke-width="2"/>
-                <line x1="50" y1="40" x2="50" y2="70" stroke="#8D5B4C" stroke-width="2"/>
-                <line x1="50" y1="40" x2="20" y2="40" stroke="#8D5B4C" stroke-width="2"/>
-                <line x1="50" y1="40" x2="80" y2="40" stroke="#8D5B4C" stroke-width="2"/>
-              </g>
-              <circle cx="50" cy="40" r="3" fill="#6E4437"/>
-            </svg>
-          </div>
-          <!-- 8. Personajes -->
-          <div id="farm-characters" class="farm-element farm-people">👴👧</div>
+        <!-- Vista previa de la plantilla real del usuario -->
+        <div class="activity-template-preview">
+          <img src="assets/images/plantilla_arte.jpg" alt="Ejemplo de Obra de Arte con Macarrones y Semillas" class="template-preview-img">
         </div>
 
-        <!-- Panel de Preguntas y Opciones -->
-        <div class="quiz-panel">
-          <div class="quiz-speech-bubble">
-            <span id="quiz-question-number" class="quiz-badge">Pregunta 1 de 8</span>
-            <p id="quiz-question-text" class="quiz-text">Cargando pregunta...</p>
+        <div class="activity-steps">
+          <div class="act-step">
+            <span class="act-num">1</span>
+            <p>Reparte la plantilla dibujada con las espigas y el sol.</p>
           </div>
-
-          <!-- 3 opciones ilustradas -->
-          <div id="quiz-options-container" class="quiz-options-container">
-            <button id="quiz-opt-a" class="quiz-choice-btn" data-choice="0">
-              <span id="quiz-opt-a-emoji" class="quiz-choice-emoji">🍞</span>
-              <span id="quiz-opt-a-text" class="quiz-choice-text">Opción A</span>
-            </button>
-            <button id="quiz-opt-b" class="quiz-choice-btn" data-choice="1">
-              <span id="quiz-opt-b-emoji" class="quiz-choice-emoji">🥣</span>
-              <span id="quiz-opt-b-text" class="quiz-choice-text">Opción B</span>
-            </button>
-            <button id="quiz-opt-c" class="quiz-choice-btn" data-choice="2">
-              <span id="quiz-opt-c-emoji" class="quiz-choice-emoji">🥖</span>
-              <span id="quiz-opt-c-text" class="quiz-choice-text">Opción C</span>
-            </button>
+          <div class="act-step">
+            <span class="act-num">2</span>
+            <p>Pon pegamento con cuidado dentro del sol, las espigas y el suelo.</p>
+          </div>
+          <div class="act-step">
+            <span class="act-num">3</span>
+            <p>¡Pega macarrones en las espigas/sol y semillas reales en el suelo!</p>
           </div>
         </div>
-
-        <!-- Pantalla de Celebración Final del Cuento / Campo -->
-        <div id="quiz-celebration" class="quiz-celebration-screen hidden">
-          <div class="celebration-content">
-            <div class="party-popper">🎉🚜🌾🥳</div>
-            <h2>¡Habéis construido el campo juntos!</h2>
-            <p class="celebration-desc">El campo del abuelo y del tío está lleno de vida gracias a vosotros.</p>
-            <p class="final-badge">🏆 ¡Gran Granjero de Fontecha! 🏆</p>
-            <button id="btn-quiz-reset" class="next-level-btn">Volver al Inicio</button>
-          </div>
-        </div>
-
+        
+        <button id="btn-activity-home" class="next-level-btn" style="margin-top: 1.5rem;">Volver al Inicio 🏠</button>
       </div>
-    </section>
 
   </main>
 

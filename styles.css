@@ -261,6 +261,7 @@ header {
 .card-p2 { border-bottom: 8px solid var(--color-green); }
 .card-p3 { border-bottom: 8px solid var(--color-primary-yellow); }
 .card-p4 { border-bottom: 8px solid var(--color-brown-light); }
+.card-activity { border-bottom: 8px solid #E74C3C; }
 
 
 /* ==========================================================================
@@ -448,9 +449,23 @@ header {
   animation: shake 0.5s ease;
 }
 
-.product-emoji {
-  font-size: 5rem;
-  margin-bottom: 0.5rem;
+.product-image-container {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFDF4;
+  border: 4px solid #F6F1D5;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .product-title {
@@ -465,9 +480,9 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 950px;
-  gap: 3.5rem;
-  flex-wrap: wrap; /* Evita que se corten en pantallas estrechas */
+  max-width: 1100px;
+  gap: 2rem;
+  flex-wrap: nowrap;
 }
 
 .grain-bucket {
@@ -479,7 +494,8 @@ header {
   flex-direction: column;
   align-items: center;
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  width: 220px;
+  width: 200px;
+  flex-shrink: 1;
 }
 
 .character-visual-container {
@@ -528,6 +544,7 @@ header {
 .label-trigo { background-color: var(--color-primary-dark); }
 .label-centeno { background-color: var(--color-brown); }
 .label-avena { background-color: var(--color-orange); }
+.label-cebada { background-color: var(--color-green); }
 
 /* Bocadillo de retroalimentación de abuelo */
 .feedback-bubble {
@@ -593,6 +610,11 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.step-image-graphic.contain {
+  object-fit: contain;
+  background-color: #FFFDF4;
 }
 
 .step-text-container {
@@ -1280,4 +1302,239 @@ header {
 @keyframes confetti-fall {
   0% { transform: translateY(0) rotate(0deg); opacity: 1; }
   100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+/* ==========================================================================
+   NUEVA FASE 1: PRESENTANDO A NUESTROS AMIGOS CEREALES
+   ========================================================================== */
+
+.phase1-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  gap: 2rem;
+}
+
+.cereal-tabs {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.cereal-tab-btn {
+  background-color: white;
+  border: 4px solid #E2DDD0;
+  border-radius: var(--border-radius-md);
+  padding: 0.8rem 2rem;
+  font-family: var(--font-main);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-brown);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cereal-tab-btn:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-sky-dark);
+}
+
+.cereal-tab-btn.active {
+  background-color: var(--color-sky-dark);
+  color: white;
+  border-color: var(--color-sky-dark);
+  box-shadow: var(--shadow-medium);
+}
+
+.cereal-details-card {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  border: 6px solid white;
+  box-shadow: var(--shadow-medium);
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cereal-details-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cereal-detail-avatar {
+  width: 120px;
+  height: 140px;
+}
+
+.cereal-detail-bubble {
+  flex: 1;
+  min-width: 280px;
+  background-color: #FFFDF4;
+  border: 4px solid var(--color-sky-dark);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem 2rem;
+  position: relative;
+}
+
+.cereal-detail-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.cereal-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.comparison-card {
+  background-color: #FFFDF4;
+  border-radius: var(--border-radius-md);
+  border: 4px solid #F6F1D5;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.comparison-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-brown);
+}
+
+.comparison-media-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: var(--shadow-soft);
+  background-color: var(--color-sky);
+}
+
+.comparison-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilos de la pantalla de actividad final (Taller de arte) */
+.activity-card {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  border: 8px solid #E74C3C;
+  padding: 3rem;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: var(--shadow-medium);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  animation: pop-up 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.activity-emoji {
+  font-size: 4.5rem;
+  animation: speak-wiggle 3s infinite ease-in-out;
+}
+
+.activity-card h2 {
+  font-size: 3.2rem;
+  color: var(--color-brown);
+  font-weight: 700;
+}
+
+.activity-intro {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.activity-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.act-step {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #FFFDF4;
+  border: 3px dashed var(--color-brown-light);
+  padding: 1.2rem 2rem;
+  border-radius: var(--border-radius-md);
+  transition: transform 0.2s ease;
+}
+
+.act-step:hover {
+  transform: scale(1.02);
+}
+
+.act-num {
+  background-color: #E74C3C;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.act-step p {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Vista previa de la plantilla en el Taller de arte */
+.activity-template-preview {
+  width: 100%;
+  max-width: 480px;
+  height: 270px;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  border: 6px solid white;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1rem;
+  background-color: var(--color-bg);
+}
+
+.template-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

@@ -11,17 +11,16 @@ const FASE0_GALLERY = [
   { url: 'assets/images/abuelo_5.jpeg', text: 'Llenamos el almacén de grano y a Jimena le encanta tirarse a jugar.' }
 ];
 
-// Alimentos y productos de la FASE 1
-const FASE1_PRODUCTS = [
-  { name: 'Barra de pan', emoji: '🥖', grain: 'trigo', text: '¡El trigo se muele para hacer harina y hornear ricas barras de pan!' },
-  { name: 'Espaguetis', emoji: '🍝', grain: 'trigo', text: '¡Los espaguetis y la pasta se hacen con sémola de trigo!' },
-  { name: 'Gorro de paja', emoji: '👒', grain: 'trigo', text: '¡La paja seca del trigo sirve para tejer sombreros para el sol!' },
-  { name: 'Copos de avena', emoji: '🥣', grain: 'avena', text: '¡Los copos de avena te dan súper fuerza y energía por las mañanas!' },
-  { name: 'Jabón de avena', emoji: '🧼', grain: 'avena', text: '¡La avena es súper suave y cuida la piel de tus manos!' },
-  { name: 'Leche de avena', emoji: '🥛', grain: 'avena', text: '¡La leche de avena es una bebida vegetal dulce y muy rica!' },
-  { name: 'Cama de animales', emoji: '🛏️', grain: 'centeno', text: '¡La paja de centeno es muy resistente y abriga a los animales en el establo!' },
-  { name: 'Pan oscuro', emoji: '🍞', grain: 'centeno', text: '¡El centeno se usa para hacer pan negro u oscuro, muy saludable!' },
-  { name: 'Cerveza', emoji: '🍺', grain: 'centeno', text: '¡El grano de centeno (y cebada) se fermenta para elaborar cerveza!' }
+// Alimentos y productos de la FASE 4 (Juego de clasificar - 2 por cereal con ilustraciones reales/dibujos)
+const FASE4_PRODUCTS = [
+  { name: 'Pan de trigo', image: 'assets/images/pan_trigo.png', grain: 'trigo', text: '¡El trigo se muele para hacer harina y hornear ricas barras de pan!' },
+  { name: 'Pasta y espaguetis', image: 'assets/images/pasta_trigo.png', grain: 'trigo', text: '¡Los espaguetis y macarrones deliciosos se hacen con sémola de trigo!' },
+  { name: 'Pan de centeno', image: 'assets/images/pan_centeno.png', grain: 'centeno', text: '¡El centeno se utiliza para hacer panes oscuros y rústicos muy sabrosos!' },
+  { name: 'Cama para animales', image: 'assets/images/paja_centeno.png', grain: 'centeno', text: '¡La paja de centeno es súper resistente y sirve para hacer camas calentitas para los animales!' },
+  { name: 'Copos de avena', image: 'assets/images/copos_avena.png', grain: 'avena', text: '¡Los copos de avena te dan súper fuerza y energía en tus desayunos!' },
+  { name: 'Bebida de avena', image: 'assets/images/leche_avena.png', grain: 'avena', text: '¡La avena también se utiliza para hacer una bebida vegetal dulce y muy rica!' },
+  { name: 'Cerveza', image: 'assets/images/cerveza_cebada.png', grain: 'cebada', text: '¡La cebada es el ingrediente principal para elaborar cerveza!' },
+  { name: 'Pienso para animales', image: 'assets/images/pienso_cebada.png', grain: 'cebada', text: '¡La cebada es un cereal excelente y muy nutritivo para alimentar a los animales!' }
 ];
 
 // Pasos de cultivo de la FASE 2
@@ -163,9 +162,9 @@ const FASE2_STEPS = [
     </svg>`
   },
   {
-    image: 'assets/images/Antiguas/paso_9.png',
-    title: '10. Fábricas y molinos',
-    desc: 'Los molinos muelen los granos de cereal para convertirlos en harina, ¡lista para hornear cosas ricas!',
+    image: 'assets/images/paso_10.jpeg',
+    title: '10. Hacer harina y pan',
+    desc: 'Con el grano del cereal hacemos harina muy fina, ¡y con la harina hacemos pan, galletas o espaguetis!',
     svg: `<svg viewBox="0 0 400 200" width="100%" height="100%">
       <rect width="400" height="150" fill="#A3D8F4"/>
       <rect y="130" width="400" height="70" fill="#E2B13C"/>
@@ -183,7 +182,7 @@ const FASE3_MACHINES = [
   {
     name: 'Tractor',
     icon: '🚜',
-    soundName: 'tractor',
+    soundName: 'tractor_sound',
     svg: `<svg viewBox="0 0 400 250" width="100%" height="100%">
       <rect width="400" height="180" fill="#A3D8F4" rx="20"/>
       <rect y="160" width="400" height="90" fill="#8D5B4C" rx="20"/>
@@ -203,7 +202,7 @@ const FASE3_MACHINES = [
   {
     name: 'Cosechadora',
     icon: '🌾',
-    soundName: 'cosechadora',
+    soundName: 'cosechadora_sound',
     svg: `<svg viewBox="0 0 400 250" width="100%" height="100%">
       <rect width="400" height="180" fill="#A3D8F4" rx="20"/>
       <rect y="160" width="400" height="90" fill="#8D5B4C" rx="20"/>
@@ -226,153 +225,131 @@ const FASE3_MACHINES = [
     </svg>`
   },
   {
-    name: 'Sembradora',
-    icon: '🌱',
-    soundName: 'sembradora',
-    svg: `<svg viewBox="0 0 400 250" width="100%" height="100%">
-      <rect width="400" height="180" fill="#A3D8F4" rx="20"/>
-      <rect y="160" width="400" height="90" fill="#8D5B4C" rx="20"/>
-      <g class="animate-chug">
-        <!-- Tractor Verde -->
-        <rect x="200" y="90" width="120" height="70" fill="#68BB59" rx="10" stroke="#FFF" stroke-width="2"/>
-        <rect x="260" y="55" width="50" height="40" fill="#68BB59" rx="5"/>
-        <circle cx="225" cy="160" r="22" fill="#333"/>
-        <circle cx="295" cy="155" r="32" fill="#333"/>
-        <!-- Sembradora naranja acoplada -->
-        <rect x="90" y="100" width="90" height="50" fill="#F47A22" rx="6" stroke="#FFF" stroke-width="2"/>
-        <circle cx="110" cy="160" r="18" fill="#444"/>
-        <circle cx="160" cy="160" r="18" fill="#444"/>
-        <line x1="180" y1="125" x2="200" y2="125" stroke="#555" stroke-width="8"/>
-      </g>
-      <!-- Semillas cayendo animadas -->
-      <circle cx="110" cy="180" r="4.5" fill="#FCD12A" class="falling-seed"/>
-      <circle cx="130" cy="175" r="4.5" fill="#FCD12A" class="falling-seed" style="animation-delay: 0.3s;"/>
-      <circle cx="150" cy="182" r="4.5" fill="#FCD12A" class="falling-seed" style="animation-delay: 0.1s;"/>
-      <circle cx="160" cy="178" r="4.5" fill="#FCD12A" class="falling-seed" style="animation-delay: 0.5s;"/>
-    </svg>`
-  },
-  {
-    name: 'Remolque',
+    name: 'Camión',
     icon: '🚛',
-    soundName: 'remolque',
+    soundName: 'camion_sound',
     svg: `<svg viewBox="0 0 400 250" width="100%" height="100%">
       <rect width="400" height="180" fill="#A3D8F4" rx="20"/>
       <rect y="160" width="400" height="90" fill="#8D5B4C" rx="20"/>
       <g class="animate-chug">
-        <!-- Tractor -->
-        <rect x="250" y="100" width="90" height="55" fill="#E74C3C" rx="8"/>
-        <circle cx="270" cy="155" r="18" fill="#222"/>
-        <circle cx="320" cy="150" r="24" fill="#222"/>
-        <!-- Remolque gigante lleno de grano amarillo -->
-        <rect x="80" y="80" width="145" height="70" fill="#4A90E2" rx="5" stroke="#FFF" stroke-width="3"/>
-        <!-- Carga de trigo -->
-        <path d="M 80 80 Q 110 65 150 72 T 225 80 Z" fill="#FCD12A"/>
-        <circle cx="110" cy="155" r="22" fill="#222" stroke="#FFF" stroke-width="3"/>
-        <circle cx="180" cy="155" r="22" fill="#222" stroke="#FFF" stroke-width="3"/>
-        <!-- Enganche -->
-        <line x1="225" y1="125" x2="250" y2="125" stroke="#666" stroke-width="8"/>
-      </g>
-    </svg>`
-  },
-  {
-    name: 'Arado',
-    icon: '🚜⛏️',
-    soundName: 'arado',
-    svg: `<svg viewBox="0 0 400 250" width="100%" height="100%">
-      <rect width="400" height="180" fill="#A3D8F4" rx="20"/>
-      <!-- Tierra con surcos marcados -->
-      <rect y="160" width="400" height="90" fill="#8D5B4C" rx="20"/>
-      <path d="M 0 170 Q 100 160 200 172 T 400 168" fill="none" stroke="#6E4437" stroke-width="12"/>
-      <g class="animate-chug">
-        <!-- Tractor -->
-        <rect x="160" y="90" width="130" height="70" fill="#E74C3C" rx="10" stroke="#FFF" stroke-width="2"/>
-        <circle cx="190" cy="160" r="20" fill="#333"/>
-        <circle cx="260" cy="155" r="28" fill="#333"/>
-        <!-- Arado de metal detrás -->
-        <path d="M 80 120 L 140 145 M 100 130 L 115 152 M 120 130 L 132 152" stroke="#777" stroke-width="6" stroke-linecap="round"/>
-        <!-- Ruedita del arado -->
-        <circle cx="95" cy="155" r="12" fill="#555"/>
-        <line x1="140" y1="130" x2="160" y2="130" stroke="#555" stroke-width="8"/>
+        <!-- Cabina del camión -->
+        <rect x="240" y="75" width="70" height="85" fill="#E74C3C" rx="10" stroke="#FFF" stroke-width="3"/>
+        <rect x="265" y="85" width="35" height="30" fill="#FFF" rx="5"/>
+        <rect x="240" y="115" width="15" height="35" fill="#444"/>
+        <!-- Remolque tolva de grano -->
+        <rect x="70" y="65" width="160" height="95" fill="#4A90E2" rx="8" stroke="#FFF" stroke-width="3"/>
+        <path d="M 70 65 L 230 65 L 230 75 L 70 75 Z" fill="#2B6CB0"/>
+        <!-- Ruedas -->
+        <circle cx="110" cy="165" r="25" fill="#333" stroke="#FFF" stroke-width="4"/>
+        <circle cx="170" cy="165" r="25" fill="#333" stroke="#FFF" stroke-width="4"/>
+        <circle cx="275" cy="165" r="25" fill="#333" stroke="#FFF" stroke-width="4"/>
+        <!-- Tubo de escape y humo -->
+        <line x1="235" y1="75" x2="235" y2="30" stroke="#555" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="235" cy="25" r="6" fill="#DDD" class="puff-smoke"/>
+        <circle cx="240" cy="12" r="9" fill="#EEE" class="puff-smoke" style="animation-delay: 0.3s;"/>
       </g>
     </svg>`
   }
 ];
 
-// Preguntas y respuestas de la FASE 4 (¡Todos al campo!)
-const FASE4_QUESTIONS = [
-  {
-    question: "¿De qué cereal hacemos harina blanca para hacer pan de molde y espaguetis?",
-    choices: [
-      { text: "Trigo", emoji: "🌾", isCorrect: true },
-      { text: "Avena", emoji: "🥣", isCorrect: false },
-      { text: "Centeno", emoji: "🌾", isCorrect: false }
-    ],
-    elementId: "farm-wheat"
+// Información de los cereales para la FASE 1
+const CEREALES_INFO = {
+  trigo: {
+    name: 'Trigo',
+    desc: '¡Hola, soy el Trigo! Soy el cereal más famoso. Mis espigas son doradas y con mis granos hacemos harina blanca para preparar pan de molde, galletas, bizcochos y espaguetis.',
+    planta: 'assets/images/trigo_planta.png',
+    grano: 'assets/images/trigo_grano.png',
+    svg: `<svg viewBox="0 0 120 150" class="cereal-char-svg">
+      <path d="M 60 20 C 85 45, 95 90, 85 120 C 75 140, 45 140, 35 120 C 25 90, 35 45, 60 20 Z" fill="#F9D342" stroke="#4E3629" stroke-width="4"/>
+      <path d="M 60 20 Q 60 5 65 0 M 60 20 Q 55 10 50 5 M 60 20 Q 65 10 70 5" stroke="#4E3629" stroke-width="3" fill="none"/>
+      <circle cx="48" cy="75" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+      <circle cx="48" cy="75" r="3" fill="#000"/>
+      <circle cx="72" cy="75" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+      <circle cx="72" cy="75" r="3" fill="#000"/>
+      <circle cx="46" cy="73" r="2" fill="#FFF"/>
+      <circle cx="70" cy="73" r="2" fill="#FFF"/>
+      <circle cx="40" cy="85" r="5" fill="#FF8E8E" opacity="0.8"/>
+      <circle cx="80" cy="85" r="5" fill="#FF8E8E" opacity="0.8"/>
+      <path d="M 50 88 Q 60 102 70 88" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 32 90 Q 15 85 20 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 88 90 Q 105 85 100 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 45 133 Q 45 145 40 145" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 75 133 Q 75 145 80 145" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </svg>`
   },
-  {
-    question: "¿Qué máquina remueve la tierra seca para dejarla blandita antes de sembrar?",
-    choices: [
-      { text: "Remolque", emoji: "🚛", isCorrect: false },
-      { text: "Arado", emoji: "🚜⛏️", isCorrect: true },
-      { text: "Cosechadora", emoji: "🌾", isCorrect: false }
-    ],
-    elementId: "farm-plow"
+  centeno: {
+    name: 'Centeno',
+    desc: '¡Hola, soy el Centeno! Soy muy fuerte y resisto muy bien el frío. Mis espigas son alargadas y con mis granos se hace un pan oscuro muy rico y paja muy fuerte para las camas de los animales.',
+    planta: 'assets/images/centeno_planta.png',
+    grano: 'assets/images/centeno_grano.png',
+    svg: `<svg viewBox="0 0 120 150" class="cereal-char-svg">
+      <path d="M 60 15 C 80 40, 85 95, 80 125 C 75 142, 45 142, 40 125 C 35 95, 40 40, 60 15 Z" fill="#C19A6B" stroke="#4E3629" stroke-width="4"/>
+      <path d="M 60 15 Q 40 -5 50 -10 Q 60 -12 65 -2 Z" fill="#76C043" stroke="#4E3629" stroke-width="3"/>
+      <circle cx="48" cy="70" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+      <circle cx="48" cy="70" r="3" fill="#000"/>
+      <circle cx="72" cy="70" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+      <circle cx="72" cy="70" r="3" fill="#000"/>
+      <circle cx="46" cy="68" r="2" fill="#FFF"/>
+      <circle cx="70" cy="68" r="2" fill="#FFF"/>
+      <circle cx="40" cy="80" r="5" fill="#FF8E8E" opacity="0.8"/>
+      <circle cx="80" cy="80" r="5" fill="#FF8E8E" opacity="0.8"/>
+      <path d="M 52 82 Q 60 92 68 82 Z" fill="#E74C3C" stroke="#4E3629" stroke-width="3"/>
+      <path d="M 36 90 Q 20 85 22 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 84 90 Q 100 85 98 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 46 135 Q 46 146 41 146" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 74 135 Q 74 146 79 146" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </svg>`
   },
-  {
-    question: "¿Qué necesita la semilla en el cielo para calentarse y crecer con energía?",
-    choices: [
-      { text: "El Sol", emoji: "☀️", isCorrect: true },
-      { text: "La Nieve", emoji: "❄️", isCorrect: false },
-      { text: "La Luna", emoji: "🌙", isCorrect: false }
-    ],
-    elementId: "farm-sun"
+  avena: {
+    name: 'Avena',
+    desc: '¡Hola, soy la Avena! Mis granos crecen en ramitas colgantes muy bonitas. Me usan para hacer copos de avena que dan súper fuerza en el desayuno, bebidas dulces y jabones muy suaves.',
+    planta: 'assets/images/avena_planta.png',
+    grano: 'assets/images/avena_grano.png',
+    svg: `<svg viewBox="0 0 120 150" class="cereal-char-svg">
+      <path d="M 60 25 C 85 45, 90 90, 80 120 C 72 138, 48 138, 40 120 C 30 90, 35 45, 60 25 Z" fill="#F5F0E6" stroke="#4E3629" stroke-width="4"/>
+      <path d="M 40 30 Q 30 20 40 15 Q 50 20 40 30 Z M 50 30 Q 60 20 50 15 Q 40 20 50 30 Z" fill="#F47A22" stroke="#4E3629" stroke-width="2"/>
+      <circle cx="45" cy="22" r="4" fill="#E74C3C"/>
+      <circle cx="48" cy="72" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+      <circle cx="48" cy="72" r="3" fill="#000"/>
+      <path d="M 40 66 L 44 68 M 38 72 L 42 73" stroke="#4E3629" stroke-width="2.5"/>
+      <circle cx="72" cy="72" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+      <circle cx="72" cy="72" r="3" fill="#000"/>
+      <path d="M 80 66 L 76 68 M 82 72 L 78 73" stroke="#4E3629" stroke-width="2.5"/>
+      <circle cx="46" cy="70" r="2" fill="#FFF"/>
+      <circle cx="70" cy="70" r="2" fill="#FFF"/>
+      <circle cx="40" cy="82" r="5" fill="#FF8E8E" opacity="0.8"/>
+      <circle cx="80" cy="82" r="5" fill="#FF8E8E" opacity="0.8"/>
+      <path d="M 52 84 Q 60 94 68 84" stroke="#4E3629" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 34 88 Q 18 95 24 105" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 86 88 Q 102 95 96 105" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 46 132 Q 46 144 41 144" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 74 132 Q 74 144 79 144" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </svg>`
   },
-  {
-    question: "¿Con qué cereal hacemos los copos para un desayuno súper energético y jabón suave?",
-    choices: [
-      { text: "Trigo", emoji: "🌾", isCorrect: false },
-      { text: "Centeno", emoji: "🌾", isCorrect: false },
-      { text: "Avena", emoji: "🥣", isCorrect: true }
-    ],
-    elementId: "farm-avena"
-  },
-  {
-    question: "¿Qué gran máquina corta las espigas maduras y separa el grano limpio en verano?",
-    choices: [
-      { text: "Sembradora", emoji: "🌱", isCorrect: false },
-      { text: "Cosechadora", emoji: "🚜", isCorrect: true },
-      { text: "Remolque", emoji: "🚛", isCorrect: false }
-    ],
-    elementId: "farm-harvester"
-  },
-  {
-    question: "¿Qué hacemos con la paja seca que sobra en el campo tras la cosecha?",
-    choices: [
-      { text: "Alpacas o pacas", emoji: "🟡", isCorrect: true },
-      { text: "Juguetes de plástico", emoji: "🧸", isCorrect: false },
-      { text: "Leche de avena", emoji: "🥛", isCorrect: false }
-    ],
-    elementId: "farm-bales"
-  },
-  {
-    question: "¿Dónde molemos el grano de cereal para convertirlo en harina lista para hornear?",
-    choices: [
-      { text: "En la empacadora", emoji: "🚜", isCorrect: false },
-      { text: "En el molino", emoji: "🏠", isCorrect: true },
-      { text: "En el silo", emoji: "🛢️", isCorrect: false }
-    ],
-    elementId: "farm-windmill"
-  },
-  {
-    question: "¿Quiénes trabajan la tierra cada día en el Páramo de Fontecha?",
-    choices: [
-      { text: "El abuelo y el tío", emoji: "👴👨", isCorrect: true },
-      { text: "Los marcianos", emoji: "👽", isCorrect: false },
-      { text: "Los pingüinos", emoji: "🐧", isCorrect: false }
-    ],
-    elementId: "farm-characters"
+  cebada: {
+    name: 'Cebada',
+    desc: '¡Hola, soy la Cebada! Mis espigas tienen unas barbas muy largas y finas. Sirvo para hacer bebidas ricas como la malta y la cerveza, y también soy un alimento estupendo para las vacas y ovejas.',
+    planta: 'assets/images/cebada_planta.png',
+    grano: 'assets/images/cebada_grano.png',
+    svg: `<svg viewBox="0 0 120 150" class="cereal-char-svg">
+      <path d="M 60 20 C 85 45, 95 90, 85 120 C 75 140, 45 140, 35 120 C 25 90, 35 45, 60 20 Z" fill="#E5C158" stroke="#4E3629" stroke-width="4"/>
+      <path d="M 60 20 L 60 -15 M 55 22 L 40 -10 M 65 22 L 80 -10 M 50 30 L 25 5 M 70 30 L 95 5" stroke="#4E3629" stroke-width="3" fill="none"/>
+      <circle cx="48" cy="75" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+      <circle cx="48" cy="75" r="3" fill="#000"/>
+      <circle cx="72" cy="75" r="8" fill="#FFF" stroke="#4E3629" stroke-width="3"/>
+      <circle cx="72" cy="75" r="3" fill="#000"/>
+      <circle cx="46" cy="73" r="2" fill="#FFF"/>
+      <circle cx="70" cy="73" r="2" fill="#FFF"/>
+      <circle cx="40" cy="85" r="5" fill="#FF8E8E" opacity="0.8"/>
+      <circle cx="80" cy="85" r="5" fill="#FF8E8E" opacity="0.8"/>
+      <path d="M 50 88 Q 60 102 70 88" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 32 90 Q 15 85 20 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 88 90 Q 105 85 100 75" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 45 133 Q 45 145 40 145" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M 75 133 Q 75 145 80 145" stroke="#4E3629" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </svg>`
   }
-];
+};
 
 
 /* ==========================================================================
@@ -386,11 +363,9 @@ let state = {
   // Fase 0 state
   p0SlideIndex: 0,
 
-  // Fase 1 state
-  p1ProductIndex: 0,
-  p1ProductsList: [],
-  p1CorrectCount: 0,
-  p1WaitingNext: false,
+  // Fase 1 state (Presentando a nuestros amigos)
+  p1CerealIndex: 0,
+  p1CerealsList: ['trigo', 'centeno', 'avena', 'cebada'],
 
   // Fase 2 state
   p2StepIndex: 0,
@@ -401,9 +376,11 @@ let state = {
   p3SelectedAnswer: null,
   p3CelebrationActive: false,
 
-  // Fase 4 state
-  p4QuestionIndex: 0,
-  p4QuestionAnswered: false
+  // Fase 4 state (¿Con qué se hace esto?)
+  p4ProductIndex: 0,
+  p4ProductsList: [],
+  p4CorrectCount: 0,
+  p4WaitingNext: false
 };
 
 
@@ -424,6 +401,9 @@ function initAudioContext() {
 
 // Reproductor de efectos integrados
 const AudioEffects = {
+  currentAudio: null,
+  audioTimeout: null,
+
   // Pitido alegre de victoria / acierto
   playSuccess: function() {
     initAudioContext();
@@ -489,30 +469,51 @@ const AudioEffects = {
     initAudioContext();
     console.log("Intentando reproducir sonido:", soundName);
 
+    // Detener cualquier reproducción en curso
+    if (this.currentAudio) {
+      try {
+        this.currentAudio.pause();
+      } catch (e) {}
+      this.currentAudio = null;
+    }
+    if (this.audioTimeout) {
+      clearTimeout(this.audioTimeout);
+      this.audioTimeout = null;
+    }
+
     // Intentar reproducir archivo de audio real (.mp3) si existe
     const audioPath = `assets/sounds/${soundName}.mp3`;
     const audio = new Audio(audioPath);
+    this.currentAudio = audio;
     
     audio.play().then(() => {
       console.log("Sonido real reproducido con éxito:", audioPath);
+      // Iniciar el fade out a los 3 segundos, deteniendo por completo a los 3.5 segundos
+      this.audioTimeout = setTimeout(() => {
+        let startVolume = audio.volume;
+        let fadeInterval = setInterval(() => {
+          if (audio.volume > 0.05) {
+            audio.volume -= 0.05;
+          } else {
+            clearInterval(fadeInterval);
+            audio.pause();
+            audio.currentTime = 0;
+            audio.volume = startVolume; // restaurar
+          }
+        }, 50); // fade out de 500ms
+      }, 3000);
     }).catch(err => {
-      console.warn("No se encontró el archivo real, usando sintetizador de audio:", err);
+      console.warn("No se pudo reproducir el archivo .mp3 real. Usando sintetizador:", err);
       // Fallback al sintetizador Web Audio API
       switch(soundName) {
-        case 'tractor':
-          this.synthEngine(50, 6.5, 0.18, 1.2, 220);
+        case 'tractor_sound':
+          this.synthEngine(50, 6.5, 0.18, 3.5, 220);
           break;
-        case 'cosechadora':
-          this.synthHarvester(1.5);
+        case 'cosechadora_sound':
+          this.synthHarvester(3.5);
           break;
-        case 'sembradora':
-          this.synthSeeder(1.8);
-          break;
-        case 'remolque':
-          this.synthSqueak(1.6);
-          break;
-        case 'arado':
-          this.synthScraping(1.8);
+        case 'camion_sound':
+          this.synthEngine(65, 5.0, 0.15, 3.5, 180);
           break;
       }
     });
@@ -714,6 +715,18 @@ const AudioEffects = {
    ========================================================================== */
 
 function showScreen(screenId) {
+  // Detener sonidos de maquinaria en reproducción al cambiar de pantalla
+  if (AudioEffects.currentAudio) {
+    try {
+      AudioEffects.currentAudio.pause();
+    } catch(e) {}
+    AudioEffects.currentAudio = null;
+  }
+  if (AudioEffects.audioTimeout) {
+    clearTimeout(AudioEffects.audioTimeout);
+    AudioEffects.audioTimeout = null;
+  }
+
   // Ocultar todas las pantallas
   document.querySelectorAll('.screen').forEach(scr => {
     scr.classList.remove('active');
@@ -754,8 +767,8 @@ function updateGlobalHeader() {
       createStepDots(FASE0_GALLERY.length, state.p0SlideIndex);
       break;
     case 1:
-      phaseTitle.textContent = "🥖 ¿Con qué se hace esto?";
-      createStepDots(FASE1_PRODUCTS.length, state.p1ProductIndex);
+      phaseTitle.textContent = "🌱 Presentando a nuestros amigos";
+      createStepDots(state.p1CerealsList.length, state.p1CerealIndex);
       break;
     case 2:
       phaseTitle.textContent = "🌾 El camino del grano";
@@ -766,8 +779,12 @@ function updateGlobalHeader() {
       createStepDots(FASE3_MACHINES.length, state.p3MachineIndex);
       break;
     case 4:
-      phaseTitle.textContent = "🚜 ¡Todos al campo!";
-      createStepDots(FASE4_QUESTIONS.length, state.p4QuestionIndex);
+      phaseTitle.textContent = "🥖 ¿Con qué se hace esto?";
+      createStepDots(state.p4ProductsList.length, state.p4ProductIndex);
+      break;
+    case 5:
+      phaseTitle.textContent = "🎨 Taller de arte";
+      createStepDots(1, 0);
       break;
   }
 }
@@ -796,11 +813,7 @@ function loadPhase(index) {
     showScreen('screen-phase0');
     renderPhase0();
   } else if (index === 1) {
-    // Barajar productos para hacerlo interactivo cada vez
-    state.p1ProductsList = [...FASE1_PRODUCTS].sort(() => Math.random() - 0.5);
-    state.p1ProductIndex = 0;
-    state.p1CorrectCount = 0;
-    state.p1WaitingNext = false;
+    state.p1CerealIndex = 0;
     showScreen('screen-phase1');
     renderPhase1();
   } else if (index === 2) {
@@ -815,16 +828,19 @@ function loadPhase(index) {
     showScreen('screen-phase3');
     renderPhase3();
   } else if (index === 4) {
-    state.p4QuestionIndex = 0;
-    state.p4QuestionAnswered = false;
-    // Ocultar todos los elementos interactivos del lienzo al iniciar
-    document.querySelectorAll('.farm-element').forEach(el => {
-      el.classList.remove('active');
-    });
-    const resetBtn = document.getElementById('quiz-celebration');
-    if (resetBtn) resetBtn.classList.add('hidden');
+    // Barajar productos para hacerlo interactivo cada vez
+    state.p4ProductsList = [...FASE4_PRODUCTS].sort(() => Math.random() - 0.5);
+    state.p4ProductIndex = 0;
+    state.p4CorrectCount = 0;
+    state.p4WaitingNext = false;
+
+    const celScreen = document.getElementById('quiz-celebration');
+    if (celScreen) celScreen.classList.add('hidden');
+
     showScreen('screen-phase4');
     renderPhase4();
+  } else if (index === 5) {
+    showScreen('screen-activity');
   }
 }
 
@@ -891,8 +907,8 @@ function nextPhase0() {
     state.p0SlideIndex++;
     renderPhase0();
   } else {
-    showToast("¡Historia completada! Vamos a jugar.");
-    loadPhase(1); // Saltar automáticamente a fase 1
+    showToast("¡Historia completada!");
+    showScreen('screen-menu');
   }
 }
 
@@ -906,96 +922,40 @@ function prevPhase0() {
 }
 
 
-// --- FASE 1: ¿CON QUÉ SE HACE ESTO? ---
+// --- FASE 1: PRESENTANDO A NUESTROS AMIGOS ---
 function renderPhase1() {
-  if (state.p1ProductIndex >= state.p1ProductsList.length) {
-    // Juego terminado
-    showToast("¡Enhorabuena! Has clasificado todos los alimentos.");
-    loadPhase(2);
-    return;
-  }
+  const cerealKey = state.p1CerealsList[state.p1CerealIndex];
+  const cereal = CEREALES_INFO[cerealKey];
 
-  state.p1WaitingNext = false;
-  const product = state.p1ProductsList[state.p1ProductIndex];
-  
-  // Ocultar bocadillo de feedback
-  document.getElementById('p1-feedback-bubble').classList.add('hidden');
-  
-  // Limpiar estilos anteriores de la tarjeta
-  const card = document.getElementById('product-card');
-  card.className = 'product-card';
-  
-  // Render producto actual
-  document.getElementById('product-icon').textContent = product.emoji;
-  document.getElementById('product-name').textContent = product.name;
-
-  // Habilitar clics en recipientes
-  document.querySelectorAll('.grain-bucket').forEach(b => {
-    b.style.pointerEvents = 'auto';
+  // Activar la pestaña correcta
+  document.querySelectorAll('.cereal-tab-btn').forEach(btn => {
+    if (btn.dataset.cereal === cerealKey) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
   });
+
+  // Actualizar el avatar SVG y la descripción
+  document.getElementById('cereal-detail-avatar').innerHTML = cereal.svg;
+  document.getElementById('cereal-detail-desc').textContent = cereal.desc;
 
   updateGlobalHeader();
 }
 
-function checkPhase1Answer(chosenGrain) {
-  if (state.p1WaitingNext) return;
-
-  const product = state.p1ProductsList[state.p1ProductIndex];
-  const card = document.getElementById('product-card');
-  const feedbackBubble = document.getElementById('p1-feedback-bubble');
-  const feedbackText = document.getElementById('p1-feedback-text');
-
-  // Bloquear clics temporales
-  state.p1WaitingNext = true;
-  document.querySelectorAll('.grain-bucket').forEach(b => {
-    b.style.pointerEvents = 'none';
-  });
-
-  if (chosenGrain === product.grain) {
-    // ACIERTO
-    AudioEffects.playSuccess();
-    triggerConfetti();
-    card.classList.add('correct-anim');
-    feedbackText.textContent = `¡Sí! ${product.text}`;
-    feedbackBubble.classList.remove('hidden');
-
-    // Animación de la pila de granos creciendo un poco
-    const pile = document.querySelector(`.${chosenGrain}-pile`);
-    if (pile) {
-      const currentHeight = parseInt(window.getComputedStyle(pile).height) || 60;
-      pile.style.height = `${Math.min(currentHeight + 12, 140)}px`;
-    }
-
-    // Avanzar automáticamente tras 3.5 segundos para dar tiempo a leer el texto del abuelo
-    setTimeout(() => {
-      state.p1ProductIndex++;
-      renderPhase1();
-    }, 3500);
-
+function nextPhase1() {
+  if (state.p1CerealIndex < state.p1CerealsList.length - 1) {
+    state.p1CerealIndex++;
+    renderPhase1();
   } else {
-    // ERROR
-    AudioEffects.playError();
-    card.classList.add('wrong-anim');
-    
-    // Consejos amables del abuelo
-    let cerealCorrecto = product.grain.toUpperCase();
-    feedbackText.textContent = `¡Casi! Pero no es de ${chosenGrain.toUpperCase()}. El abuelo dice: El/la ${product.name} se elabora con ${cerealCorrecto}. ¡Inténtalo otra vez!`;
-    feedbackBubble.classList.remove('hidden');
-
-    // Quitar animación de error para poder repetirla
-    setTimeout(() => {
-      card.classList.remove('wrong-anim');
-      state.p1WaitingNext = false;
-      document.querySelectorAll('.grain-bucket').forEach(b => {
-        b.style.pointerEvents = 'auto';
-      });
-    }, 1200);
+    showToast("¡Hemos conocido a todos nuestros amigos!");
+    showScreen('screen-menu');
   }
 }
 
 function prevPhase1() {
-  if (state.p1ProductIndex > 0) {
-    state.p1ProductIndex--;
+  if (state.p1CerealIndex > 0) {
+    state.p1CerealIndex--;
     renderPhase1();
   } else {
     loadPhase(0);
@@ -1004,7 +964,7 @@ function prevPhase1() {
 
 
 // --- FASE 2: EL CAMINO DEL GRANO ---
-function getMediaHTML(src, alt, fallbackSvg) {
+function getMediaHTML(src, alt, fallbackSvg, useContain = false) {
   if (!src) return fallbackSvg;
   const isVideo = src.endsWith('.mp4') || src.endsWith('.webm');
   if (isVideo) {
@@ -1013,8 +973,9 @@ function getMediaHTML(src, alt, fallbackSvg) {
       <div class="step-svg-fallback" style="display: none;">${fallbackSvg}</div>
     `;
   } else {
+    const extraClass = useContain ? ' contain' : '';
     return `
-      <img src="${src}" alt="${alt}" class="step-image-graphic">
+      <img src="${src}" alt="${alt}" class="step-image-graphic${extraClass}">
       <div class="step-svg-fallback" style="display: none;">${fallbackSvg}</div>
     `;
   }
@@ -1028,7 +989,9 @@ function renderPhase2() {
   document.getElementById('step-description').textContent = step.desc;
 
   const canvas = document.getElementById('step-svg-canvas');
-  canvas.innerHTML = getMediaHTML(step.image, step.title, step.svg);
+  // Usamos ajuste 'contain' en paso 6 (índice 5) y paso 10 (índice 9) para no cortar las caras
+  const useContain = (state.p2StepIndex === 5 || state.p2StepIndex === 9);
+  canvas.innerHTML = getMediaHTML(step.image, step.title, step.svg, useContain);
   
   const mediaElement = canvas.querySelector('.step-image-graphic, .step-video-graphic');
   if (mediaElement) {
@@ -1047,8 +1010,8 @@ function nextPhase2() {
     state.p2StepIndex++;
     renderPhase2();
   } else {
-    showToast("¡Hemos visto todo el camino! Ahora, ¿adivinamos las máquinas?");
-    loadPhase(3);
+    showToast("¡Hemos visto todo el camino!");
+    showScreen('screen-menu');
   }
 }
 
@@ -1066,7 +1029,7 @@ function prevPhase2() {
 function renderPhase3() {
   if (state.p3MachineIndex >= state.p3MachinesList.length) {
     showToast("¡Eres un experto en máquinas agrícolas!");
-    loadPhase(4);
+    showScreen('screen-menu');
     return;
   }
 
@@ -1169,111 +1132,111 @@ function prevPhase3() {
 }
 
 
-// --- FASE 4: ¡TODOS AL CAMPO! ---
+// --- FASE 4: ¿CON QUÉ SE HACE ESTO? ---
 function renderPhase4() {
-  if (state.p4QuestionIndex >= FASE4_QUESTIONS.length) {
+  if (state.p4ProductIndex >= state.p4ProductsList.length) {
+    // Juego terminado - mostrar pantalla de celebración final
     const celScreen = document.getElementById('quiz-celebration');
     if (celScreen) celScreen.classList.remove('hidden');
-    triggerConfetti();
-    return;
-  }
-
-  const qData = FASE4_QUESTIONS[state.p4QuestionIndex];
-
-  // Renderizar textos
-  document.getElementById('quiz-question-number').textContent = `Pregunta ${state.p4QuestionIndex + 1} de ${FASE4_QUESTIONS.length}`;
-  document.getElementById('quiz-question-text').textContent = qData.question;
-
-  // Renderizar las 3 opciones de botones
-  qData.choices.forEach((choice, idx) => {
-    const ids = ['quiz-opt-a', 'quiz-opt-b', 'quiz-opt-c'];
-    const btn = document.getElementById(ids[idx]);
-    const emojiSpan = document.getElementById(ids[idx] + '-emoji');
-    const textSpan = document.getElementById(ids[idx] + '-text');
-
-    btn.className = 'quiz-choice-btn';
-    emojiSpan.textContent = choice.emoji;
-    textSpan.textContent = choice.text;
-  });
-
-  // Habilitar clics
-  document.querySelectorAll('.quiz-choice-btn').forEach(btn => {
-    btn.style.pointerEvents = 'auto';
-  });
-
-  updateGlobalHeader();
-}
-
-function checkPhase4Answer(button, optionIndex) {
-  if (state.p4QuestionAnswered) return; // Ya acertaron esta pregunta
-
-  const qData = FASE4_QUESTIONS[state.p4QuestionIndex];
-  const choice = qData.choices[optionIndex];
-
-  if (choice.isCorrect) {
-    // ACIERTO
-    state.p4QuestionAnswered = true;
+    
     AudioEffects.playSuccess();
     triggerConfetti();
-    button.classList.add('correct');
-
-    // Desbloquear elemento correspondiente en el campo con animación
-    const element = document.getElementById(qData.elementId);
-    if (element) {
-      element.classList.add('active');
-    }
-
-    // Bloquear otros botones
-    document.querySelectorAll('.quiz-choice-btn').forEach(btn => {
-      btn.style.pointerEvents = 'none';
-    });
-
-    // Pequeño aviso toast para que sepan que pueden avanzar
-    showToast("¡Respuesta correcta! Pulsa Barra Espaciadora o Siguiente para continuar.");
-
-  } else {
-    // ERROR
-    AudioEffects.playError();
-    button.classList.add('wrong');
-    showToast("¡Vuelve a intentarlo!");
-
-    setTimeout(() => {
-      button.classList.remove('wrong');
-    }, 1200);
-  }
-}
-
-function nextPhase4() {
-  if (!state.p4QuestionAnswered) {
-    showToast("¡Debéis responder correctamente antes de avanzar!");
-    return;
-  }
-
-  if (state.p4QuestionIndex < FASE4_QUESTIONS.length - 1) {
-    state.p4QuestionIndex++;
-    state.p4QuestionAnswered = false;
-    renderPhase4();
-  } else {
-    // Fin de preguntas: Celebración final
-    AudioEffects.playSuccess();
-    triggerConfetti();
-    // Lanzar confeti periódico en bucle
+    
     let count = 0;
     const interval = setInterval(() => {
       if (count++ > 5) clearInterval(interval);
       triggerConfetti();
     }, 1000);
+    
+    return;
+  }
 
-    const celScreen = document.getElementById('quiz-celebration');
-    if (celScreen) celScreen.classList.remove('hidden');
+  state.p4WaitingNext = false;
+  const product = state.p4ProductsList[state.p4ProductIndex];
+  
+  // Ocultar bocadillo de feedback
+  document.getElementById('p4-feedback-bubble').classList.add('hidden');
+  
+  // Limpiar estilos anteriores de la tarjeta
+  const card = document.getElementById('product-card');
+  card.className = 'product-card';
+  
+  // Render producto actual
+  const imgEl = document.getElementById('product-img');
+  imgEl.src = product.image;
+  imgEl.alt = product.name;
+  document.getElementById('product-name').textContent = product.name;
+
+  // Habilitar clics en recipientes
+  document.querySelectorAll('.grain-bucket').forEach(b => {
+    b.style.pointerEvents = 'auto';
+  });
+
+  updateGlobalHeader();
+}
+
+function checkPhase4Answer(chosenGrain) {
+  if (state.p4WaitingNext) return;
+
+  const product = state.p4ProductsList[state.p4ProductIndex];
+  const card = document.getElementById('product-card');
+  const feedbackBubble = document.getElementById('p4-feedback-bubble');
+  const feedbackText = document.getElementById('p4-feedback-text');
+
+  // Bloquear clics temporales
+  state.p4WaitingNext = true;
+  document.querySelectorAll('.grain-bucket').forEach(b => {
+    b.style.pointerEvents = 'none';
+  });
+
+  if (chosenGrain === product.grain) {
+    // ACIERTO
+    AudioEffects.playSuccess();
+    triggerConfetti();
+    card.classList.add('correct-anim');
+    feedbackText.textContent = `¡Sí! ${product.text}`;
+    feedbackBubble.classList.remove('hidden');
+
+    // Avanzar automáticamente tras 3.5 segundos para dar tiempo a leer el texto del abuelo
+    setTimeout(() => {
+      state.p4ProductIndex++;
+      renderPhase4();
+    }, 3500);
+
+  } else {
+    // ERROR
+    AudioEffects.playError();
+    card.classList.add('wrong-anim');
+    
+    // Consejos amables del abuelo
+    let cerealCorrecto = product.grain.toUpperCase();
+    feedbackText.textContent = `¡Casi! Pero no es de ${chosenGrain.toUpperCase()}. El abuelo dice: El/la ${product.name} se elabora con ${cerealCorrecto}. ¡Inténtalo otra vez!`;
+    feedbackBubble.classList.remove('hidden');
+
+    // Quitar animación de error para poder repetirla
+    setTimeout(() => {
+      card.classList.remove('wrong-anim');
+      state.p4WaitingNext = false;
+      document.querySelectorAll('.grain-bucket').forEach(b => {
+        b.style.pointerEvents = 'auto';
+      });
+    }, 1200);
+  }
+}
+
+function nextPhase4() {
+  if (state.p4ProductIndex < state.p4ProductsList.length - 1) {
+    state.p4ProductIndex++;
+    renderPhase4();
+  } else {
+    state.p4ProductIndex = state.p4ProductsList.length;
+    renderPhase4();
   }
 }
 
 function prevPhase4() {
-  if (state.p4QuestionIndex > 0) {
-    state.p4QuestionIndex--;
-    // Al volver atrás, asumimos que ya estaba contestada correctamente
-    state.p4QuestionAnswered = true;
+  if (state.p4ProductIndex > 0) {
+    state.p4ProductIndex--;
     renderPhase4();
   } else {
     loadPhase(3);
@@ -1293,8 +1256,7 @@ function goNextGlobal() {
       nextPhase0();
       break;
     case 1:
-      state.p1ProductIndex++;
-      renderPhase1();
+      nextPhase1();
       break;
     case 2:
       nextPhase2();
@@ -1304,6 +1266,9 @@ function goNextGlobal() {
       break;
     case 4:
       nextPhase4();
+      break;
+    case 5:
+      showScreen('screen-menu');
       break;
   }
 }
@@ -1326,6 +1291,9 @@ function goPrevGlobal() {
       break;
     case 4:
       prevPhase4();
+      break;
+    case 5:
+      loadPhase(4);
       break;
   }
 }
@@ -1393,6 +1361,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-menu-p2').addEventListener('click', () => loadPhase(2));
   document.getElementById('btn-menu-p3').addEventListener('click', () => loadPhase(3));
   document.getElementById('btn-menu-p4').addEventListener('click', () => loadPhase(4));
+  document.getElementById('btn-menu-activity').addEventListener('click', () => loadPhase(5));
 
   // --- Evento Botón Home ---
   document.getElementById('btn-home').addEventListener('click', () => {
@@ -1412,11 +1381,16 @@ document.addEventListener('DOMContentLoaded', () => {
     nextPhase0();
   });
 
-  // --- Eventos Fase 1 (Cubos de Grano) ---
-  document.querySelectorAll('.grain-bucket').forEach(bucket => {
-    bucket.addEventListener('click', () => {
-      const chosenGrain = bucket.dataset.grain;
-      checkPhase1Answer(chosenGrain);
+  // --- Eventos Fase 1 (Presentando a nuestros amigos) ---
+  document.querySelectorAll('.cereal-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cerealName = btn.dataset.cereal;
+      const index = state.p1CerealsList.indexOf(cerealName);
+      if (index !== -1) {
+        state.p1CerealIndex = index;
+        AudioEffects.playClick();
+        renderPhase1();
+      }
     });
   });
 
@@ -1437,28 +1411,33 @@ document.addEventListener('DOMContentLoaded', () => {
     nextPhase3();
   });
 
-  // --- Eventos Fase 4 (Cuestionario Construir Campo) ---
-  const optA = document.getElementById('quiz-opt-a');
-  if (optA) {
-    optA.addEventListener('click', () => {
-      checkPhase4Answer(optA, 0);
+  // --- Eventos Fase 4 (Cubos de Grano) ---
+  document.querySelectorAll('.grain-bucket').forEach(bucket => {
+    bucket.addEventListener('click', () => {
+      const chosenGrain = bucket.dataset.grain;
+      checkPhase4Answer(chosenGrain);
     });
-  }
-  const optB = document.getElementById('quiz-opt-b');
-  if (optB) {
-    optB.addEventListener('click', () => {
-      checkPhase4Answer(optB, 1);
-    });
-  }
-  const optC = document.getElementById('quiz-opt-c');
-  if (optC) {
-    optC.addEventListener('click', () => {
-      checkPhase4Answer(optC, 2);
-    });
-  }
+  });
+
   const resetQuizBtn = document.getElementById('btn-quiz-reset');
   if (resetQuizBtn) {
     resetQuizBtn.addEventListener('click', () => {
+      AudioEffects.playClick();
+      showScreen('screen-menu');
+    });
+  }
+
+  const quizActivityBtn = document.getElementById('btn-quiz-activity');
+  if (quizActivityBtn) {
+    quizActivityBtn.addEventListener('click', () => {
+      AudioEffects.playClick();
+      loadPhase(5);
+    });
+  }
+
+  const resetActivityBtn = document.getElementById('btn-activity-home');
+  if (resetActivityBtn) {
+    resetActivityBtn.addEventListener('click', () => {
       AudioEffects.playClick();
       showScreen('screen-menu');
     });
